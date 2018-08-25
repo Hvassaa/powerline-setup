@@ -61,14 +61,19 @@ mkdir -p ~/.config/powerline
 cp /etc/xdg/powerline/config.json ~/.config/powerline/config.json
 ~~~
 
-#### modify the local file (~/.config/powerline/config.json) - change *"theme": "default"* to *"theme": "default_leftonly"* under the "shell" part. As follows ("---" and "+++" should not actually be there, it's just indicating what to change):
+#### modify the local file (~/.config/powerline/config.json) - change *"theme": "default"* to *"theme": "default_leftonly"* under the "shell" part. As follows:
 ~~~
 }
 "shell": {
 "colorscheme": "default",
---- "theme": "default",
-+++ "theme": "default_leftonly",
+~~- "theme": "default",~~
++ "theme": "default_leftonly",
 "local_themes": {
 "continuation": "continuation",
 "select": "select"
+~~~
+
+### reload powerline
+~~~
+powerline-daemon --replace
 ~~~
